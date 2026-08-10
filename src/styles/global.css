@@ -2,12 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-
 @import "tailwindcss";
 
 /* Path relative to current CSS file */
 @config "../../tailwind.config.mjs";
-
 
 /* Define theme font mappings */
 @theme {
@@ -17,67 +15,66 @@
   --max-screen: 1200px;
   --inner-screen: 800px;
 
-  --color-neutral-50: #f7f9fc;
-  --color-neutral-100: #edf1f8;
-  --color-neutral-200: #dfe4ed;
-  --color-neutral-300: #c5cedb;
-  --color-neutral-400: #92a1b7;
-  --color-neutral-500: #677487;
-  --color-neutral-600: #4f5a6d;
-  --color-neutral-700: #3f4a5a;
-  --color-neutral-800: #2c3542;
-  --color-neutral-900: #19222f;
-  --color-neutral-950: #10161f;
+  /* ── Grayscale neutral palette (modern black) ── */
+  --color-neutral-50:  #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
 
-  --color-primary: #2d6dc3;
-  --color-primary-rgb: 45, 109, 195;
-  --color-primary-strong: #0066ff;
-  --color-primary-dark: #2d6dc3;
-  --color-primary-light: #8fb9ff;
-  --color-primary-light-dark: #bcd8ff;
-  --color-primary-lighter: #6da7ff;
-  /* Article-specific variables */
-  --color-primary-bg: var(--color-bg-primary-light);
+  /* ── Primary (now grayscale) ── */
+  --color-primary:       #1a1a1a;
+  --color-primary-rgb:   26, 26, 26;
+  --color-primary-strong: #000000;
+  --color-primary-dark:  #333333;
+  --color-primary-light: #cccccc;
+  --color-primary-light-dark: #b3b3b3;
+  --color-primary-lighter: #e6e6e6;
+  --color-primary-bg:    var(--color-bg-primary-light);
   --color-primary-bg-light: var(--color-bg-secondary);
 
+  /* ── Buttons ── */
+  --color-btn-primary:            #1a1a1a;
+  --color-btn-primary-hover:      #000000;
+  --color-btn-primary-dark:       #333333;
+  --color-btn-primary-dark-hover: #1a1a1a;
 
-  --color-btn-primary: #2d6dc3;
-  --color-btn-primary-hover: #0066ff;
-  --color-btn-primary-dark: #2871e9;
-  --color-btn-primary-dark-hover: #2d6dc3;
+  /* ── Accent (keep neutral, but can stay gray) ── */
+  --color-accent:       #a3a3a3;
+  --color-accent-light: #d4d4d4;
 
-  /* Accent colors */
-  --color-accent: #fad13b;
-  --color-accent-light: #faeb75;
+  /* ── Backgrounds ── */
+  --color-bg-primary:        #ffffff;
+  --color-bg-secondary:      #fafafa;
+  --color-bg-primary-light:  #f5f5f5;
+  --color-bg-primary-deep:   #f0f0f0;
 
-  /* Background colors */
+  --color-bg-primary-dark:    #0a0a0a;
+  --color-bg-secondary-dark:  #171717;
 
-  --color-bg-primary: #fdfaf5;
-  --color-bg-secondary: #fff;
-  --color-bg-primary-light: #faf9f5;
-  --color-bg-primary-deep: #fefcf4;
+  /* ── Text colours ── */
+  --color-text-primary:    #000000;
+  --color-text-secondary:  #1a1a1a;
+  --color-text-tertiary:   #404040;
 
-  --color-bg-primary-dark: #0b1220;
-  --color-bg-secondary-dark: #0f1b2d;
-
-
-  /* Text colors */
-  --color-text-primary: #2d6dc3;
-  --color-text-secondary: #3f4a5a;
-  --color-text-tertiary: #7a6550;
-
-  --color-text-primary-dark: #3884eb;
-  --color-text-secondary-dark: #c5cedb;
-  --color-text-tertiary-dark: #9bb3d7;
+  --color-text-primary-dark:    #ffffff;
+  --color-text-secondary-dark:  #e5e5e5;
+  --color-text-tertiary-dark:   #a3a3a3;
 }
 
-/* Dark mode variable overrides */
+/* Dark mode overrides (grayscale) */
 html.dark {
-  --color-primary-rgb: 56, 132, 235;
-  --color-primary-light-dark: #3884eb;
-  --color-primary-lighter: #8fb9ff;
-  --color-primary-bg: rgba(56, 132, 235, 0.15);
-  --color-primary-bg-light: rgba(56, 132, 235, 0.05);
+  --color-primary-rgb: 255, 255, 255;
+  --color-primary-light-dark: #e6e6e6;
+  --color-primary-lighter: #cccccc;
+  --color-primary-bg: rgba(255, 255, 255, 0.08);
+  --color-primary-bg-light: rgba(255, 255, 255, 0.04);
 }
 
 /* Add typography styles */
@@ -113,13 +110,13 @@ html.dark {
     padding-right: 1rem;
   }
   .gradient-title {
-    background: linear-gradient(to right, #746aff, #0b046d);
+    background: linear-gradient(to right, #404040, #000000);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
  .gradient-title-light{
-    background: linear-gradient(to right, #bcb7ff, #746aff);
+    background: linear-gradient(to right, #b3b3b3, #666666);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -138,7 +135,7 @@ html.dark h1,html.dark h2,html.dark h3{
   color:var(--color-text-primary-dark);
 }
 
-/* Custom CSS styles */
+/* Custom CSS styles (unchanged) */
 #sun {
   transform: rotate(0);
 }
@@ -245,5 +242,3 @@ body::-webkit-scrollbar-thumb:active,
 div::-webkit-scrollbar-thumb:active {
   background: var(--color-primary-dark) !important;
 }
-
-
